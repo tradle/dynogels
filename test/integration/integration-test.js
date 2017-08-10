@@ -727,6 +727,31 @@ describe('Dynogels Integration Tests', function () {
       });
     });
 
+    it('should paginate query via continue()', done => {
+      const paginated = Tweet.query('userid-1').limit(1);
+      const unpaginated = Tweet.query('userid-1').limit(2);
+      const getPaginated = callback => paginated.exec((err1, batch1) => {
+        if (err1) return callback(err1);
+
+        paginated.continue((err2, batch2) => {
+          if (err2) return callback(err2);
+
+          callback(null, batch1.Items.concat(batch2.Items));
+        });
+      });
+
+      const getUnpaginated = callback => unpaginated.exec((err1, batch) => {
+        if (err1) return callback(err1);
+
+        callback(null, batch.Items);
+      });
+
+      async.parallel([getPaginated, getUnpaginated], (err, results) => {
+        expect(results[0]).to.eql(results[1]);
+        done();
+      });
+    });
+
     it('should return movie if directed by Steven Spielberg the 4', done => {
       Movie.query('Movie 4').filter('director.firstName').equals('Steven').filter('director.lastName').equals('Spielberg the 4').limit(2).loadAll().exec((err, data) => {
         expect(err).to.not.exist;
