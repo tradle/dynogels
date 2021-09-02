@@ -27,9 +27,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "async": "2.4.1",
+    "async": "^2.6.3",
     "joi": "10.5.0",
-    "lodash": "4.17.4",
+    "lodash": "^4.17.21",
     "uuid": "3.0.1"
   },
   "devDependencies": {
