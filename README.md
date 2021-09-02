@@ -6,8 +6,9 @@
 [![DevDependencies Status](https://david-dm.org/clarkie/dynogels/dev-status.svg)](https://david-dm.org/clarkie/dynogels#info=devDependencies)
 [![Known Vulnerabilities](https://snyk.io/test/npm/dynogels/badge.svg)](https://snyk.io/test/npm/dynogels)
 
-Dynogels is a [DynamoDB][5] data mapper for [node.js][1]. This project has been forked from
-[Vogels](https://github.com/ryanfitz/vogels) and republished to npm under a different name.
+@tradle/Dynogels is a [DynamoDB][5] data mapper for [node.js][1]. This project has been forked from
+[Dynogels](https://github.com/clarkie/dynogels) which in turn has been forked from [Vogels](https://github.com/ryanfitz/vogels)
+and republished to npm.
 
 ## Features
 * Simplified data modeling and mapping to DynamoDB types

@@ -1,5 +1,5 @@
 {
-  "name": "dynogels",
+  "name": "@tradle/dynogels",
   "version": "8.0.1",
   "author": "Ryan Fitzgerald <ryan@codebrewstudios.com>",
   "contributors": [
@@ -13,7 +13,7 @@
     "ci": "make coverage",
     "coveralls": "cat coverage/lcov.info | coveralls"
   },
-  "repository": "git://github.com/clarkie/dynogels.git",
+  "repository": "git://github.com/tradle/dynogels.git",
   "keywords": [
     "datamapper",
     "DynamoDB",
